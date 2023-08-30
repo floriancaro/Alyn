@@ -156,7 +156,7 @@ class SkewDetect:
 
     def determine_skew(self, img_file):
 
-        img = io.imread(img_file, as_grey=True)
+        img = io.imread(img_file, as_gray=True)
         edges = canny(img, sigma=self.sigma)
         h, a, d = hough_line(edges)
         _, ap, _ = hough_line_peaks(h, a, d, num_peaks=self.num_peaks)
